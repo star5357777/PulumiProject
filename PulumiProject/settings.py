@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accountapp',
     'bootstrap4',
+    'serviceapp',
 ]
 
 MIDDLEWARE = [
@@ -96,6 +97,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'accountapp.CustomUser'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
