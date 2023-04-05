@@ -24,6 +24,6 @@ class AccountCreateView(CreateView):
     template_name = 'accountapp/create.html'
 
 class AccountDetailView(DetailView):
-    model = User
+    model = CustomUser
     context_object_name = 'target_user'
     template_name = 'accountapp/detail.html'
