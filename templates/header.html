@@ -17,6 +17,9 @@
                 <span>Register</span>
             </a>
         {% else %}
+            <a href="{% url 'accountapp:detail' pk=user.pk %}">
+                <span>My Page</span>
+            </a>
             <a href="{% url 'accountapp:logout' %}?next{{ request.path }}" alt="" style="text-decoration: none;">
                 <span>Sign Out</span>
             </a>
