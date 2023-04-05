@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>head</title>
-</head>
-<body>
+<div class="pinterest_header">
+    <div>
 
-</body>
-</html>
+        <h1 class="pinterest_logo">
+            <a style="text-decoration: none; color:inherit;" href="{% url 'accountapp:main' %}">Pastel</a>
+        </h1>
+    </div>
+    <div>
+        <span>nav1</span>
+        <span>nav2</span>
+        <span>nav3</span>
+        {% if not user.is_authenticated %}
+            <a href="{% url 'accountapp:login' %}?next{{ request.path }}" alt="" style="text-decoration: none;">
+                <span>Sign In</span>
+            </a>
+            <a href="{% url 'accountapp:create' %}" alt="" style="text-decoration: none;">
+                <span>Register</span>
+            </a>
+        {% else %}
+            <a href="{% url 'accountapp:logout' %}?next{{ request.path }}" alt="" style="text-decoration: none;">
+                <span>Sign Out</span>
+            </a>
+        {% endif %}
+    </div>
+</div>
